@@ -1,0 +1,171 @@
+<!-- UPteam | Классы личного и бизнес-роста -->
+<section class="upteam">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Inter", "Helvetica Neue", sans-serif;
+      background: linear-gradient(180deg, #ffffff 0%, #eaf9f8 100%);
+      color: #222;
+    }
+
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 20px;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 56px;
+      background: linear-gradient(90deg, #f97316, #a855f7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 3s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px rgba(249,115,22,0.2); }
+      to { text-shadow: 0 0 25px rgba(168,85,247,0.3); }
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-top: 80px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .cta {
+      display: inline-block;
+      background: linear-gradient(90deg, #f97316, #a855f7);
+      color: white;
+      font-weight: 600;
+      font-size: 20px;
+      border-radius: 14px;
+      padding: 18px 40px;
+      text-decoration: none;
+      transition: 0.3s;
+      box-shadow: 0 0 15px rgba(249,115,22,0.3);
+    }
+
+    .cta:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(168,85,247,0.4);
+    }
+
+    .programs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      padding: 40px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .date {
+      font-weight: 600;
+      color: #a855f7;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: 700;
+      color: #f97316;
+      margin-top: 10px;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 80px 20px;
+      color: #555;
+    }
+
+    .footer a {
+      color: #a855f7;
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
+
+  <div class="section">
+    <h1>UPteam — Классы личного и бизнес-роста</h1>
+    <p>Три живых интенсива, где тело, сознание и стратегия соединяются в одно целое. 
+    Мы работаем с глубиной, чтобы вернуть вам энергию и направление — без эзотерики, через движение и творчество.</p>
+    <a href="#programs" class="cta">Записаться</a>
+  </div>
+
+  <div class="section" id="programs">
+    <h2>Расписание программ</h2>
+
+    <div class="programs">
+
+      <div class="card">
+        <div class="date">ОКТЯБРЬ · 18–19</div>
+        <h3>Видение: личный компас</h3>
+        <p>Верните ясность, энергию и понимание, куда вы идёте. 
+        Два дня глубокой работы — чтобы отделить своё от навязанного и создать видение, которое вдохновляет.</p>
+        <div class="price">17 500 ₽</div>
+        <a href="#signup" class="cta">Записаться</a>
+      </div>
+
+      <div class="card">
+        <div class="date">НОЯБРЬ · 29–30</div>
+        <h3>Про деньги: глубинная перепрошивка</h3>
+        <p>Освободитесь от старых сценариев, которые мешают зарабатывать и удерживать деньги. 
+        Перепишите финансовые установки через тело и арт.</p>
+        <div class="price">17 500 ₽</div>
+        <a href="#signup" class="cta">Выбрать</a>
+      </div>
+
+      <div class="card">
+        <div class="date">ДЕКАБРЬ · 6, 10 и 17</div>
+        <h3>Стратегия года: от видения к плану</h3>
+        <p>Соберите всё воедино. Создайте стратегию нового года, в которой ваши цели соединены с энергией и внутренними ценностями.</p>
+        <div class="price">17 500 ₽</div>
+        <a href="#signup" class="cta">Выбрать</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section" id="signup">
+    <h2>Запишитесь на программу</h2>
+    <p>Выберите формат участия — очно в Москве или онлайн, оставьте контакты, и мы свяжемся с вами для подтверждения места.</p>
+    <form action="#" method="post" style="margin-top: 30px;">
+      <input type="text" name="name" placeholder="Ваше имя" required style="padding:14px 20px; width:100%; max-width:400px; margin-bottom:20px; border-radius:10px; border:1px solid #ccc;">
+      <input type="email" name="email" placeholder="Email" required style="padding:14px 20px; width:100%; max-width:400px; margin-bottom:20px; border-radius:10px; border:1px solid #ccc;">
+      <select name="program" required style="padding:14px 20px; width:100%; max-width:400px; margin-bottom:20px; border-radius:10px; border:1px solid #ccc;">
+        <option value="">Выберите программу</option>
+        <option>Октябрь — Видение</option>
+        <option>Ноябрь — Деньги</option>
+        <option>Декабрь — Стратегия года</option>
+        <option>Все три программы (45 000 ₽)</option>
+      </select>
+      <button type="submit" class="cta">Отправить заявку</button>
+    </form>
+  </div>
+
+  <div class="footer">
+    <p>© 2025 UPteam. Все права защищены.<br> Ведущие: <a href="#">Марина Иванченко</a> и <a href="#">Екатерина Смирнова</a></p>
+  </div>
+</section>
+
