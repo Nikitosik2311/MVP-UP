@@ -58,31 +58,39 @@ body {
   100% { transform: translateY(0) translateX(0); }
 }
 
-.hero h1 {
+/* Текст hero с overlay */
+.hero-text {
+  position: relative;
+  z-index: 1;
+  background: rgba(0,0,0,0.4);
+  padding: 30px 20px;
+  border-radius: 16px;
+}
+
+.hero-text h1 {
   font-size: 52px;
-  background: linear-gradient(90deg, #f97316, #a855f7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: glow 3s infinite alternate;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #fff;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
   margin-bottom: 20px;
-  opacity: 0;
-  transform: translateY(30px);
+  opacity:0; transform:translateY(30px);
   transition: all 1s ease;
 }
-.hero h1.visible { opacity:1; transform:translateY(0); }
-@keyframes glow { from { text-shadow:0 0 10px rgba(249,115,22,0.2); } to { text-shadow:0 0 25px rgba(168,85,247,0.3); } }
+.hero-text h1.visible { opacity:1; transform:translateY(0); }
 
-.hero p {
+.hero-text p {
   font-size: 20px;
-  max-width: 700px;
-  margin-bottom: 30px;
-  opacity: 0;
-  transform: translateY(20px);
+  color: #fff;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+  opacity:0; transform:translateY(20px);
   transition: all 1s ease 0.3s;
 }
-.hero p.visible { opacity:1; transform:translateY(0); }
+.hero-text p.visible { opacity:1; transform:translateY(0); }
 
-.hero .cta {
+.hero-text .cta {
   font-size: 22px;
   padding: 20px 50px;
   animation: pulse 2s infinite alternate;
@@ -90,7 +98,42 @@ body {
 @keyframes pulse { 0%{box-shadow:0 0 15px rgba(249,115,22,0.3);}100%{box-shadow:0 0 30px rgba(168,85,247,0.5);} }
 
 /* ====================== */
-/* ОСТАЛЬНАЯ СТРАНИЦА */
+/* БЛОК ПОСЛЕ HERO */
+/* ====================== */
+.after-hero {
+  max-width: 900px;
+  margin: 50px auto 0 auto;
+  text-align: center;
+  padding: 0 20px;
+}
+.after-hero h2 {
+  font-size:36px;
+  margin-bottom:20px;
+  opacity:0; transform:translateY(30px);
+  transition: all 1s ease;
+}
+.after-hero h2.visible { opacity:1; transform:translateY(0); }
+.after-hero ul {
+  list-style:none;
+  padding:0;
+}
+.after-hero li {
+  font-size:18px;
+  margin-bottom:15px;
+  position: relative;
+  padding-left:30px;
+  opacity:0; transform:translateY(20px);
+  transition: all 1s ease;
+}
+.after-hero li::before {
+  content:"✅";
+  position:absolute;
+  left:0;
+  top:0;
+}
+
+/* ====================== */
+/* КАРТОЧКИ ИНТЕНСИВОВ */
 /* ====================== */
 .section {
   max-width: 1200px;
@@ -98,14 +141,11 @@ body {
   padding: 80px 20px;
   background: linear-gradient(180deg, #ffffff 0%, #eaf9f8 100%);
 }
-
-h2 { font-size:36px; margin-top:60px; text-align:center; opacity:0; transform:translateY(30px); transition: all 1s ease; }
-h2.visible { opacity:1; transform:translateY(0); }
-
-p, li { font-size:18px; line-height:1.7; margin-bottom:16px; }
-ul { margin:20px 0; padding-left:20px; }
-.advantages li::before { content:"✅"; margin-right:10px; }
-
+h2.section-title {
+  text-align:center;
+  margin-bottom:40px;
+  font-size:36px;
+}
 .programs {
   display:grid;
   grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
@@ -123,28 +163,34 @@ ul { margin:20px 0; padding-left:20px; }
 }
 .card.visible { opacity:1; transform: translateY(0);}
 .card:hover { transform: translateY(-10px) scale(1.03) rotateZ(1deg); box-shadow:0 15px 35px rgba(0,0,0,0.18); }
-
 .date { font-weight:600; color:#a855f7; margin-bottom:10px; }
 .price { font-size:20px; font-weight:700; color:#f97316; margin-top:10px; }
 
+/* ====================== */
+/* ФОРМА ЗАПИСИ */
+/* ====================== */
 input, select { padding:14px 20px; width:100%; max-width:400px; margin-bottom:20px; border-radius:10px; border:1px solid #ccc; font-family:inherit; }
 input:focus, select:focus { border-color:#a855f7; outline:none; }
 button { cursor:pointer; border:none; }
-
 form { opacity:0; transform: translateY(30px); transition:1s ease; }
 form.visible { opacity:1; transform:translateY(0); }
-
 .cta { display:inline-block; background:linear-gradient(90deg,#f97316,#a855f7); color:white; font-weight:600; border-radius:14px; padding:18px 40px; text-decoration:none; transition:0.3s; box-shadow:0 0 15px rgba(249,115,22,0.3); }
 .cta:hover { transform:scale(1.05); box-shadow:0 0 25px rgba(168,85,247,0.4); }
 
+/* ====================== */
+/* ФУТЕР */
+/* ====================== */
 .footer { text-align:center; padding:60px 20px; color:#555; background:#f5f5f5; }
 .footer a { color:#a855f7; text-decoration:none; font-weight:600; }
 
+/* ====================== */
+/* АДАПТИВНОСТЬ */
+/* ====================== */
 @media(max-width:768px){
   h1 { font-size:42px; }
   h2 { font-size:28px; }
-  .hero p { font-size:18px; }
-  .hero .cta { font-size:18px; padding:16px 35px; }
+  .hero-text p { font-size:18px; }
+  .hero-text .cta { font-size:18px; padding:16px 35px; }
   .programs { gap:20px; }
   .card { padding:25px; }
 }
@@ -158,26 +204,32 @@ form.visible { opacity:1; transform:translateY(0); }
   <div class="floating-circle circle1"></div>
   <div class="floating-circle circle2"></div>
   <div class="floating-circle circle3"></div>
-  <h1>3 осенних интенсивa для роста и развития</h1>
-  <p>Заложите фундамент своего желаемого будущего. Найдите ясность, энергию и стратегию для себя.</p>
-  <a href="#programs" class="cta">Записаться</a>
+  <div class="hero-text">
+    <h1>3 осенних интенсивa для роста и развития</h1>
+    <p>Пока природа копит силы для рывка, мы можем заложить фундамент своего будущего.</p>
+    <p>Мы подготовили 3 интенсивa для всех, кто хочет обрести ясность, энергию и план действий.</p>
+    <p>Вы почувствуете себя автором своей жизни, а не жертвой обстоятельств.</p>
+    <a href="#programs" class="cta">Записаться</a>
+  </div>
 </section>
 
-<!-- ОСНОВНОЙ КОНТЕНТ -->
-<section class="section">
-  <ul class="advantages">
-    <li>Как создать собственную идентичность и образ будущего;</li>
-    <li>Как избавиться от финансовых ограничений;</li>
-    <li>Как поставить цели на год так, чтобы ресурсы психики работали на выполнение, а не сопротивление.</li>
+<!-- ПОСЛЕ HERO -->
+<div class="after-hero">
+  <h2>Что вы получите на интенсиве:</h2>
+  <ul>
+    <li>Ясность и понимание, куда вы хотите двигаться.</li>
+    <li>Энергию и вдохновение для действий.</li>
+    <li>Конкретный план для реализации своих целей.</li>
   </ul>
-</section>
+</div>
 
+<!-- ИНТЕНСИВЫ -->
 <section class="section" id="programs">
-  <h2>Расписание программ</h2>
+  <h2 class="section-title">Расписание программ</h2>
   <div class="programs">
     <div class="card">
       <div class="date">ОКТЯБРЬ · Видение: личный компас</div>
-      <p>"Пока ты выполняешь мечты других людей, кто занимается твоими?" — будем создавать собственное место в жизни.</p>
+      <p>"Пока ты выполняешь мечты других людей, кто занимается твоими?"</p>
       <p>Москва, 2 дня оффлайн - 18 и 19 октября</p>
       <div class="price">17 500 ₽</div>
       <a href="#signup" class="cta">Записаться</a>
@@ -185,7 +237,7 @@ form.visible { opacity:1; transform:translateY(0); }
 
     <div class="card">
       <div class="date">НОЯБРЬ · Про деньги: Глубинная перепрошивка</div>
-      <p>Как избавиться от убеждений, которые мешают зарабатывать? Специально для тех, кого не устраивает текущий доход.</p>
+      <p>Как избавиться от убеждений, которые мешают зарабатывать?</p>
       <p>Москва, 2 дня оффлайн - 29 и 30 ноября</p>
       <div class="price">17 500 ₽</div>
       <a href="#signup" class="cta">Записаться</a>
@@ -193,7 +245,7 @@ form.visible { opacity:1; transform:translateY(0); }
 
     <div class="card">
       <div class="date">ДЕКАБРЬ · Стратегия года: От видения к плану</div>
-      <p>Как избавиться от прокрастинации и сопротивления? Для тех, кто хочет реально изменить жизнь.</p>
+      <p>Как избавиться от прокрастинации и сопротивления?</p>
       <p>Москва, 1 день оффлайн - 6 декабря + 2 вечера онлайн - 10 и 17 декабря</p>
       <div class="price">17 500 ₽</div>
       <a href="#signup" class="cta">Записаться</a>
@@ -201,6 +253,7 @@ form.visible { opacity:1; transform:translateY(0); }
   </div>
 </section>
 
+<!-- ФОРМА -->
 <section class="section" id="signup">
   <h2>Запишитесь на программу</h2>
   <form action="#" method="post">
@@ -217,19 +270,22 @@ form.visible { opacity:1; transform:translateY(0); }
   </form>
 </section>
 
+<!-- ФУТЕР -->
 <div class="footer">
   <p>© 2025 UPteam. Все права защищены.<br> Ведущие: <a href="#">Марина Иванченко</a> и <a href="#">Екатерина Смирнова</a></p>
 </div>
 
+<!-- JS для появления элементов -->
 <script>
 const observer = new IntersectionObserver((entries)=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){ entry.target.classList.add('visible'); }
   });
 },{threshold:0.2});
-document.querySelectorAll('h1,h2,h3,.card,p,form').forEach(el=>observer.observe(el));
+document.querySelectorAll('h1,h2,h3,.card,p,form,.after-hero li').forEach(el=>observer.observe(el));
 </script>
 
 </body>
 </html>
+
 
