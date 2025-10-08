@@ -18,43 +18,106 @@ h1,h2,h3 { font-weight:700; line-height:1.2; }
 /* HERO-БЛОК */
 /* ====================== */
 .hero {
-  position:relative; height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; color:white; overflow:hidden; padding:0 20px;
+  position: relative;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  overflow: hidden;
 }
-.hero-bg { position:absolute; top:0; left:0; right:0; bottom:0; background:linear-gradient(120deg,#f97316,#a855f7,#10b981); background-size:600% 600%; animation:gradientShift 20s ease infinite; z-index:-2; border-radius:0; }
-@keyframes gradientShift { 0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;} }
-
-.floating-circle { position:absolute; border-radius:50%; background:rgba(255,255,255,0.15); animation:float 15s ease-in-out infinite; z-index:-1; }
-.circle1 { width:120px; height:120px; top:20%; left:10%; animation-duration:18s; }
-.circle2 { width:80px; height:80px; top:70%; left:70%; animation-duration:12s; }
-.circle3 { width:200px; height:200px; top:50%; left:50%; animation-duration:25s; }
-@keyframes float { 0%{transform:translateY(0) translateX(0);}50%{transform:translateY(-30px) translateX(20px);}100%{transform:translateY(0) translateX(0);} }
-
-.hero-text { position:relative; z-index:1; background:rgba(0,0,0,0.45); padding:40px 30px; border-radius:16px; max-width:800px; }
-
-.hero-text h1 { font-size:48px; margin-bottom:20px; text-shadow:1px 1px 6px rgba(0,0,0,0.6); }
-.hero-text p { font-size:20px; margin-bottom:15px; text-shadow:1px 1px 4px rgba(0,0,0,0.5); }
-
-.hero-text .cta { display:inline-block; font-size:22px; padding:18px 50px; font-weight:600; border-radius:14px; background:linear-gradient(90deg,#f97316,#a855f7); color:white; box-shadow:0 0 15px rgba(249,115,22,0.3); transition:0.3s; }
-.hero-text .cta:hover { transform:scale(1.05); box-shadow:0 0 25px rgba(168,85,247,0.5); }
+.hero-bg {
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: linear-gradient(120deg,#f97316,#a855f7);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  z-index:-1;
+  border-radius:0;
+}
+@keyframes gradientShift {
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+.hero-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 15px;
+}
+.hero-content p {
+  font-size: 22px;
+  margin-bottom: 25px;
+  color: #fff;
+}
+.hero-content .cta {
+  display: inline-block;
+  padding: 18px 45px;
+  background: #fff;
+  color: #a855f7;
+  font-weight: 700;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+.hero-content .cta:hover {
+  transform: scale(1.05);
+  background: #f97316;
+  color: #fff;
+}
 
 /* ====================== */
-/* БЛОК ПРОГРЕВА / ВЫГОД */
+/* БЛОК ВЫГОД */
 /* ====================== */
-.after-hero { max-width:900px; margin:50px auto; text-align:center; padding:0 20px; }
-.after-hero h2 { font-size:36px; margin-bottom:20px; color:#333; }
-.after-hero ul { list-style:none; padding:0; }
-.after-hero li { font-size:18px; margin-bottom:15px; position:relative; padding-left:30px; }
-.after-hero li::before { content:"✅"; position:absolute; left:0; top:0; color:#f97316; font-size:18px; }
+.benefits {
+  max-width: 1000px;
+  margin: 80px auto;
+  text-align: center;
+  padding: 0 20px;
+}
+.benefits .section-title {
+  font-size: 36px;
+  margin-bottom: 50px;
+  color: #333;
+}
+.benefit-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 30px;
+}
+.benefit-card {
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.benefit-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+.benefit-card .icon {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+.benefit-card p {
+  font-size: 18px;
+  color: #222;
+}
 
 /* ====================== */
-/* БЛОК ПРОБЛЕМ / ПОДСТРОЙКА */
+/* ПРОБЛЕМЫ */
 /* ====================== */
 .problems { max-width:1000px; margin:80px auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px; padding:0 20px; }
 .problem-card { background:white; padding:30px; border-radius:16px; box-shadow:0 8px 24px rgba(0,0,0,0.08); transition:0.3s; }
 .problem-card:hover { transform:translateY(-8px); box-shadow:0 15px 35px rgba(0,0,0,0.15); }
 
 /* ====================== */
-/* КАРТОЧКИ ИНТЕНСИВОВ */
+/* ИНТЕНСИВЫ */
 /* ====================== */
 .section { max-width:1200px; margin:0 auto; padding:80px 20px; }
 h2.section-title { text-align:center; margin-bottom:40px; font-size:36px; color:#333; }
@@ -66,7 +129,7 @@ h2.section-title { text-align:center; margin-bottom:40px; font-size:36px; color:
 .card p { margin-bottom:10px; }
 
 /* ====================== */
-/* ФОРМА ЗАПИСИ */
+/* ФОРМА */
 /* ====================== */
 input, select { padding:14px 20px; width:100%; max-width:400px; margin-bottom:20px; border-radius:10px; border:1px solid #ccc; font-family:inherit; }
 input:focus, select:focus { border-color:#a855f7; outline:none; }
@@ -84,12 +147,13 @@ form .cta { margin-top:10px; }
 /* АДАПТИВНОСТЬ */
 /* ====================== */
 @media(max-width:768px){
-  .hero-text h1 { font-size:36px; }
-  .hero-text p { font-size:18px; }
-  .hero-text .cta { font-size:18px; padding:16px 35px; }
+  .hero-content h1 { font-size:36px; }
+  .hero-content p { font-size:18px; }
+  .hero-content .cta { font-size:18px; padding:14px 35px; }
   .programs { gap:20px; }
   .card { padding:25px; }
   .after-hero h2 { font-size:28px; }
+  .benefit-cards { gap:20px; }
 }
 
 /* ====================== */
@@ -104,28 +168,35 @@ form .cta { margin-top:10px; }
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
-  <div class="floating-circle circle1"></div>
-  <div class="floating-circle circle2"></div>
-  <div class="floating-circle circle3"></div>
-  <div class="hero-text fade-in">
+  <div class="hero-content fade-in">
     <h1>Осень, чтобы создать жизнь по своему сценарию</h1>
-    <p>3 интенсивa для тех, кто хочет обрести ясность, энергию и конкретный план действий.</p>
-    <p>Вы почувствуете себя автором своей жизни, а не жертвой обстоятельств.</p>
-    <p>Более 500 участников уже изменили свою жизнь!</p>
+    <p>3 интенсивa для ясности, энергии и конкретного плана действий</p>
     <a href="#programs" class="cta">Записаться</a>
   </div>
 </section>
 
 <!-- ВЫГОДЫ -->
-<div class="after-hero fade-in">
-  <h2>Что вы получите на интенсиве:</h2>
-  <ul>
-    <li>Ясность и понимание, куда вы хотите двигаться</li>
-    <li>Энергию и вдохновение для действий</li>
-    <li>Конкретный план для реализации своих целей</li>
-    <li>Свободу от старых ограничений и сценариев</li>
-  </ul>
-</div>
+<section class="benefits">
+  <h2 class="section-title fade-in">Что вы получите на интенсиве</h2>
+  <div class="benefit-cards">
+    <div class="benefit-card fade-in">
+      <div class="icon">🎯</div>
+      <p>Ясность и понимание своих целей</p>
+    </div>
+    <div class="benefit-card fade-in">
+      <div class="icon">⚡</div>
+      <p>Энергию и мотивацию к действиям</p>
+    </div>
+    <div class="benefit-card fade-in">
+      <div class="icon">📋</div>
+      <p>Конкретный план для реализации</p>
+    </div>
+    <div class="benefit-card fade-in">
+      <div class="icon">🔓</div>
+      <p>Свободу от старых ограничений</p>
+    </div>
+  </div>
+</section>
 
 <!-- ПРОБЛЕМЫ -->
 <section class="problems">
@@ -193,14 +264,18 @@ form .cta { margin-top:10px; }
   <p>© 2025 UPteam. Все права защищены.<br> Ведущие: <a href="#">Марина Иванченко</a> и <a href="#">Екатерина Смирнова</a></p>
 </div>
 
-<!-- JS для анимации элементов при скролле -->
 <script>
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){ entry.target.classList.add('visible'); }
+// АНИМАЦИИ ПРИ СКРОЛЛЕ
+const faders = document.querySelectorAll('.fade-in');
+const appearOptions = { threshold: 0.2, rootMargin:"0px 0px -50px 0px" };
+const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
+  entries.forEach(entry => {
+    if(!entry.isIntersecting) return;
+    entry.target.classList.add('visible');
+    appearOnScroll.unobserve(entry.target);
   });
-},{threshold:0.2});
-document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+}, appearOptions);
+faders.forEach(fader => { appearOnScroll.observe(fader); });
 </script>
 
 </body>
